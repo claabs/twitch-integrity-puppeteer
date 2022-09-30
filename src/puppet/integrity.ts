@@ -6,7 +6,10 @@ export default class PuppetIntegrity extends PuppetBase {
     const page = await this.setupPage();
     try {
       const [integrityResp] = await Promise.all([
-        page.waitForResponse('https://gql.twitch.tv/integrity'),
+        page.waitForResponse(
+          (res) =>
+            res.url() === 'https://gql.twitch.tv/integrity' && res.request().method() === 'POST'
+        ),
         page.goto('https://www.twitch.tv/turbo'), // simplest page that runs integrity
       ]);
       this.L.debug({ integrityStatus: integrityResp.status() });
