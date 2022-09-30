@@ -1,0 +1,55 @@
+{
+  "name": "twitch-integrity-puppeteer",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "start:ts": "ts-node src/index.ts",
+    "start:debug": "DEBUG=puppeteer-extra-plugin:portal* ts-node src/index.ts",
+    "build": "rimraf dist && tsc",
+    "lint": "tsc --noEmit && eslint ."
+  },
+  "dependencies": {
+    "cancelable-promise": "^4.3.0",
+    "dotenv": "^16.0.1",
+    "filenamify": "^4.1.0",
+    "find-process": "^1.4.7",
+    "fs-extra": "^10.1.0",
+    "pidtree": "^0.5.0",
+    "pino": "^7.11.0",
+    "pino-pretty": "^7.6.1",
+    "puppeteer": "^14.1.1",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-portal": "^3.1.0",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "rimraf": "^3.0.2",
+    "set-cookie-parser": "^2.4.8",
+    "source-map-support": "^0.5.21",
+    "tough-cookie": "^4.0.0",
+    "tough-cookie-file-store": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^16.11.33",
+    "@types/set-cookie-parser": "^2.4.2",
+    "@types/tough-cookie-file-store": "^2.0.1",
+    "@types/validator": "^13.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "author": "Charlie Laabs",
+  "license": "MIT"
+}
