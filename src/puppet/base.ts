@@ -2,7 +2,7 @@ import { Logger } from 'pino';
 import { Page, Browser } from 'puppeteer';
 import path from 'path';
 import logger from '../common/logger';
-import { getDevtoolsUrl, safeLaunchBrowser, safeNewPage, UA } from '../common/puppeteer';
+import { getDevtoolsUrl, UA } from '../common/puppeteer';
 
 export interface PuppetBaseProps {
   browser: Browser;
@@ -20,8 +20,8 @@ export default class PuppetBase {
 
   protected async setupPage(): Promise<Page> {
     this.L.debug('Logging in with puppeteer');
-    const browser = await safeLaunchBrowser(this.L);
-    const page = await safeNewPage(browser, this.L);
+    // const page = await this.browser.newPage();
+    const page = (await this.browser.pages())[0];
 
     // Ghaph's configs
     await page.setViewport({

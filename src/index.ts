@@ -1,9 +1,9 @@
 import PuppetIntegrity from './puppet/integrity';
 import logger from './common/logger';
-import { safeLaunchBrowser } from './common/puppeteer';
+import puppeteer, { launchArgs } from './common/puppeteer';
 
 async function main() {
-  const browser = await safeLaunchBrowser(logger);
+  const browser = await puppeteer.launch(launchArgs);
   const integrityPuppet = new PuppetIntegrity({ browser });
   const token = await integrityPuppet.getIntegrityToken();
   logger.info({ token }, 'token');
