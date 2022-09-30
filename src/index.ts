@@ -7,7 +7,12 @@ async function main() {
   const integrityPuppet = new PuppetIntegrity({ browser });
   const token = await integrityPuppet.getIntegrityToken();
   logger.info({ token }, 'token');
+  if (token) {
+    const tokenData = Buffer.from(token.replace('v4.public.', ''), 'base64').toString();
+    logger.info(tokenData);
+  }
   await browser.close();
+  process.exit();
 }
 
 main().catch((err) => logger.error(err));

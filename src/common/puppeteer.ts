@@ -11,7 +11,6 @@ const browserLaunchRetryAttempts = 5;
 const browserNavigationTimeout = 30000;
 
 const stealth = StealthPlugin();
-stealth.enabledEvasions.delete('iframe.contentWindow'); // fixes "word word word..." and "mmMwWLliI0fiflO&1"
 puppeteer.use(stealth);
 
 export default puppeteer;
