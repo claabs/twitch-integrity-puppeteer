@@ -10,6 +10,7 @@
     "lint": "tsc --noEmit && eslint ."
   },
   "dependencies": {
+    "@ulixee/hero-playground": "^2.0.0-alpha.11",
     "dotenv": "^16.0.1",
     "fs-extra": "^10.1.0",
     "pino": "^7.11.0",
